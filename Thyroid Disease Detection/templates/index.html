@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- <script>
+    // Get the value from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const value = urlParams.get('aadharNo');
+    localStorage.setItem('aadharNo', value);
+    console.log(value)
+    document.getElementById('aadharNo').innerText = value;
+  </script> -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <title>Thyroid Detection - Homepage</title>
+
+</head>
+
+<body class="bg-nav" onload="initializeAadharNo()">
+  <nav class="navbar">
+    <a href="#" class="navbar-brand text-light" style="margin-left: 20px">Thyroid Disease Detection</a>
+  </nav>
+  <div class="container">
+    <!--  <div class="row">-->
+    <!--    <div class="col-md-8">-->
+    <!--      <h1 class="text-light display-4 mt-100" style="font-size:80px">ABCDEF TEXT</h1>-->
+    <!--    </div>-->
+    <div class="col-md-12">
+      <div class="card mt-100">
+        <div class="card-body">
+
+          <form class="form" action="/predict" method="POST">
+
+            <label for="age">Age</label><br>
+            <input type="number" class="form-control" name="age" id="age" min="1" max="100" placeholder="(1, 100)"
+              step="any" required><br>
+
+            <label for="sex">Sex</label><br>
+            <input type="number" class="form-control" name="sex" id="sex" min="0" max="1"
+              placeholder="Male - 1, Female - 0" required><br>
+
+            <label for="tsh">Thyroid Stimulating Hormone Level</label><br>
+            <input type="number" class="form-control" name="TSH" id="tsh" min="0.005" max="478.0"
+              placeholder="(0.005, 478.0)" step="any" required><br>
+
+            <label for="t3">T3 Level</label><br>
+            <input type="number" class="form-control" name="T3" id="t3" min="0.05" max="10.6" placeholder="(0.05, 10.6)"
+              step="any" required><br>
+
+            <label for="t4u">T4U Level</label><br>
+            <input type="number" class="form-control" name="T4U" id="t4u" min="0.31" max="2.12"
+              placeholder="(0.31, 2.12)" step="any" required><br>
+
+            <label for="fti">Free Thyroxine Index (FTI)</label><br>
+            <input type="number" class="form-control" name="FTI" id="fti" min="2.0" max="395.0"
+              placeholder="(2.0, 395.0)" step="any" required><br>
+
+            <label for="on_thyroxine">On Thyroxine</label><br>
+            <input type="number" class="form-control" name="onthyroxine" id="on_thyroxine" min="0" max="1"
+              placeholder="(0, 1)" required><br>
+
+            <label for="query_on_thyroxine">Query On Thyroxine</label><br>
+            <input type="number" class="form-control" name="queryonthyroxine" id="query_on_thyroxine" min="0" max="1"
+              placeholder="(0, 1)" required><br>
+
+            <label for="on_anti_thyroid_medication">On Antithyroid Medication</label><br>
+            <input type="number" class="form-control" name="onantithyroidmedication" id="on_anti_thyroid_medication"
+              min="0" max="1" placeholder="(0, 1)" required><br>
+
+            <label for="sick">Sick</label><br>
+            <input type="number" class="form-control" name="sick" id="sick" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="pregnant">Pregnant</label><br>
+            <input type="number" class="form-control" name="pregnant" id="pregnant" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="thyroid_surgery">Thyroid Surgery</label><br>
+            <input type="number" class="form-control" name="thyroidsurgery" id="thyroid_surgery" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="I131_treatment">I131 Treatment</label><br>
+            <input type="number" class="form-control" name="I131treatment" id="I131_treatment" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="query_hypothyroid">Query Hypothyroid</label><br>
+            <input type="number" class="form-control" name="queryhypothyroid" id="query_hypothyroid" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="query_hyperthyroid">Query Hyperthyroid</label><br>
+            <input type="number" class="form-control" name="queryhyperthyroid" id="query_hyperthyroid" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="lithium">Lithium</label><br>
+            <input type="number" class="form-control" name="lithium" id="lithium" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="goitre">Goitre</label><br>
+            <input type="number" class="form-control" name="goitre" id="goitre" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="tumor">Tumor</label><br>
+            <input type="number" class="form-control" name="tumor" id="tumor" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="hypopituitary">Hypopituitary</label><br>
+            <input type="number" class="form-control" name="hypopituitary" id="hypopituitary" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="psych">Psychological Symptoms</label><br>
+            <input type="number" class="form-control" name="psych" id="psych" min="0" max="1"
+              placeholder="Yes - 1, No - 0" required><br>
+              
+              <input type="text" class="form-control" name="aadharNo" id="aadharNo" placeholder="Yes - 1, No - 0" hidden><br>
+
+
+            <!--            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Predict"><br>-->
+            <center><b><input type="submit" name="sb" value="Predict" onclick="getParameters()"
+                  class="sub btn btn-primary"></p> <br></b></center>
+            <!-- <center><b><input type="submit" name="param" value="Param" onclick="getParameters()"
+                  class="sub btn btn-primary"></p> <br></b></center> -->
+
+          </form>
+
+          <!--          <br><center><h2 style="color: blue"> {{prediction_text}} </h2></center><br>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+</body>
+
+</html>

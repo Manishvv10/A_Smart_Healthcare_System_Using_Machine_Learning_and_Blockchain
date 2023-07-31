@@ -1,0 +1,62 @@
+---------- Make Sure the below dependencies are installed before proceeding ----------
+1. Nodejs
+2. MongoDB
+3. Python v3.7
+4. Ganache Blockchain
+5. Nodemon --> Install by "npm i -g nodemon"
+6. ThunderClient Extension in vscode
+
+---------- Importing ThunderClient Endpoints in vscode and Inserting Aadhar Details in Database ----------
+1. This will be needed to insert Aadhar Details into database as it doesn't have a UI and needs to be inserted this way.
+2. Navigate to ThunderClient Extension in vscode.
+3. There navigate to collections tab and besides filter collections field click on hamburger icon (three lines)
+4. Click on import and select the json files from ThunderClient folder
+5. Then ThunderClient collections will be imported.
+6. Make sure the backend server of Blockchain_Digilocker module is Running before proceeding to next step.
+7. Then go to Blockchain_Digilocker Collection ---> Create a aadhar ---> and go to body tab to insert values ----> Then click on Send to insert Aadhar details in database.
+
+---------- Blockchain Digilocker ----------
+
+1. Open the folder in vscode.
+2. Open Terminal & Split the terminal into 2 terminals.
+3. In 1st terminal type, "cd frontend" and then "npm i".
+4. In 2nd terminal type, "cd backend" and then "npm i".
+5. After installation is complete, in 1st terminal i.e in frontend type "npm start" to run.
+6. After installation is complete, in 2nd terminal i.e in backend type "nodemon index" to run.
+
+---------- Hospital Management System ----------
+
+1. Open the folder in vscode.
+2. Open Terminal & Split the terminal into 2 terminals.
+3. In 1st terminal type, "cd frontend" and then "npm i".
+4. In 2nd terminal type, "cd backend" and then "npm i".
+5. After installation is complete, in 1st terminal i.e in frontend type "npm start" to run.
+6. After installation is complete, in 2nd terminal i.e in backend type "nodemon index" to run.
+
+---------- Onsite-Health-Diagnostic-OHD ----------
+
+1. Open the folder in terminal or cmd.
+2. Install virtual environment in python by - "pip install virtualenv"
+3. create a new python virtual environment using the command - "python -m venv myenv"
+4. activate the virtual environment by - "myenv\Scripts\activate"
+5. Install dependencies by - "pip install -r requirements.txt"
+6. start app by - "python main.py"
+
+---------- Thyroid Disease Detection ----------
+
+1. Open the folder in terminal or cmd.
+2. Install virtual environment in python by - "pip install virtualenv"
+3. create a new python virtual environment using the command - "python -m venv env"
+4. activate the virtual environment by - "env\Scripts\activate"
+5. Install dependencies by - "pip install -r requirements.txt"
+6. start app by - "python main.py"
+------Make sure to change the file paths for generated reports inside the server folder in routes->reportGenAuth.js file and in static->js->script.js file -----
+
+---------- Location based Services ----------
+
+1. Open the folder in terminal or cmd.
+2. start app by - "python sms_app.py"
+
+
+
+

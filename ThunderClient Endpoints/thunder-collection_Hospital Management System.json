@@ -1,0 +1,884 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Hospital Management System",
+    "dateExported": "2023-06-03T18:47:00.432Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "0e02bf75-3d5d-4635-a695-a425016c3436",
+            "name": "Authentication",
+            "containerId": "",
+            "created": "2023-04-30T07:15:59.085Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Patient Authentication",
+            "containerId": "0e02bf75-3d5d-4635-a695-a425016c3436",
+            "created": "2023-04-30T09:04:41.034Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "ac3246aa-0190-411d-bdb7-5efd60798f4e",
+            "name": "Doctor Authentication",
+            "containerId": "0e02bf75-3d5d-4635-a695-a425016c3436",
+            "created": "2023-04-30T09:04:55.932Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Appointments",
+            "containerId": "",
+            "created": "2023-04-30T10:04:54.144Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "c597c8b9-1409-4445-954f-f224b2378cfb",
+            "name": "Receptionist",
+            "containerId": "",
+            "created": "2023-04-30T14:50:00.964Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "b2d4cffb-85eb-416e-af2b-5ca450bce422",
+            "name": "Prescriptions",
+            "containerId": "",
+            "created": "2023-04-30T15:58:06.308Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "f4e20554-f402-49a6-a53b-bfa2ea575984",
+            "name": "Emergency Cases",
+            "containerId": "",
+            "created": "2023-04-30T18:15:35.976Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "a8c1aaa4-38ca-4017-897b-94ade3266d5a",
+            "name": "Contact And Queries",
+            "containerId": "",
+            "created": "2023-04-30T18:42:13.508Z",
+            "sortNum": 90000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "d60eeaab-02bf-400f-b364-5b2873ea1591",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Get Patient Data",
+            "url": "http://localhost:5000/api/auth/patient/getpatient",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-04-30T08:08:58.902Z",
+            "modified": "2023-04-30T14:43:17.257Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjg1MzMyMX0.KQFrGwoADOZFONj-qojhjKsH9LoSOyTU3PFYq7PyuzI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "19507835-149c-49e8-8519-84ba243d0ec5",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "ac3246aa-0190-411d-bdb7-5efd60798f4e",
+            "name": "Get Doctor Data",
+            "url": "http://localhost:5000/api/auth/doctor/getdoctor",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-04-30T09:05:03.248Z",
+            "modified": "2023-04-30T11:16:28.210Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3IiOnsiaWQiOiI2NDRlNGRmNmViY2VlNTI3NjIwNTYyMGYifSwiaWF0IjoxNjgyODUzMzY2fQ.oXnl5Ac2Y-Pe1exrqy8rIocN4u51W_iB47BGdXl9VGY"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7a5301c1-37ed-4173-af21-00d3787368fd",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Get Patient Data Copy",
+            "url": "http://localhost:5000/api/auth/patient/getpatient",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-05-03T18:13:43.767Z",
+            "modified": "2023-05-03T18:18:04.071Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjg1MzMyMX0.KQFrGwoADOZFONj-qojhjKsH9LoSOyTU3PFYq7PyuzI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0ded4b1b-9242-4ffb-8ccd-f75981aad8cd",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Register a new Patient",
+            "url": "http://localhost:5000/api/auth/patient/registerpatient",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-30T07:16:14.373Z",
+            "modified": "2023-04-30T14:43:22.189Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fname\":\"Manish\",\n  \"lname\":\"Verma\",\n  \"gender\":\"male\",\n  \"email\":\"manishverma22@gmail.com\",\n  \"password\":\"manish\",\n  \"mobileno\":\"1234567890\",\n  \"dob\":\"Sat Mar 10 2001 12:03:56 GMT+0530 (India Standard Time)\",\n  \"address\":\"pune\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1e3b8276-c150-4564-b079-8d9c8184d747",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "ac3246aa-0190-411d-bdb7-5efd60798f4e",
+            "name": "Register a new Doctor",
+            "url": "http://localhost:5000/api/auth/doctor/registerdoctor",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-30T09:05:09.271Z",
+            "modified": "2023-05-01T11:55:43.667Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fname\":\"Prateek\",\n  \"lname\":\"Kumar\",\n  \"gender\":\"male\",\n  \"email\":\"prateek@gmail.com\",\n  \"password\":\"prateek\",\n  \"mobileno\":\"1234567890\",\n  \"dob\":\"Sat Mar 10 2001 12:03:56 GMT+0530 (India Standard Time)\",\n  \"speciality\":\"SKIN\",\n  \"fees\": \"500\",\n  \"qualification\":\"MBBS\",\n  \"experience\":\"5\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5b67096d-3e8f-4e6e-b90e-48a01fe17153",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Patient Login With Credentials",
+            "url": "http://localhost:5000/api/auth/patient/patientlogin",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-04-30T07:57:55.511Z",
+            "modified": "2023-04-30T14:43:26.524Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"manishverma22@gmail.com\",\n  \"password\":\"manish\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "91c7b530-cf30-42a9-a724-f6569a8b667d",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "ac3246aa-0190-411d-bdb7-5efd60798f4e",
+            "name": "Doctor Login With Credentials ",
+            "url": "http://localhost:5000/api/auth/doctor/doctorlogin",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-04-30T09:05:13.871Z",
+            "modified": "2023-04-30T11:16:21.650Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"manishverma10@gmail.com\",\n  \"password\":\"manish\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2ed96a83-210e-4e25-9aa6-c2a36d31792f",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Register or Take a New Appointment",
+            "url": "http://localhost:5000/api/appointments/takeappointment",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-04-30T10:05:05.784Z",
+            "modified": "2023-05-02T10:36:26.777Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjg1MzMyMX0.KQFrGwoADOZFONj-qojhjKsH9LoSOyTU3PFYq7PyuzI"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"appointmentDate\":\"Tue May 2 2023 12:03:56 GMT+0530 (India Standard Time)\",\n  \"appointmentTime\":\"Tue May 2 2023 12:03:56 GMT+0530 (India Standard Time)\",\n  \"doctorId\":\"644e4df6ebcee5276205620f\",\n  \"referredTo\":\"ENT\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "446950c7-a498-4fa1-af6d-7f0fd375196f",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Fetch All Patient Appointments",
+            "url": "http://localhost:5000/api/appointments/fetchallappointments",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-04-30T12:39:34.654Z",
+            "modified": "2023-05-02T10:23:42.519Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjg1MzMyMX0.KQFrGwoADOZFONj-qojhjKsH9LoSOyTU3PFYq7PyuzI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f3509288-6b7e-46c8-8a52-d0322eac8f29",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Cancel Appointment By User(By Updating userAppointment Status to False)",
+            "url": "http://localhost:5000/api/appointments/cancelappointment/644f8e28b70e97a49cb1ff8f",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2023-04-30T13:04:29.594Z",
+            "modified": "2023-05-01T10:03:12.549Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjg1MzMyMX0.KQFrGwoADOZFONj-qojhjKsH9LoSOyTU3PFYq7PyuzI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cfea2935-2960-4923-9449-bbcbbc753f14",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Deleting a Appointment from the List",
+            "url": "http://localhost:5000/api/appointments/deleteappointment/644e60ddc6bb69b7660d247d",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2023-04-30T13:09:23.196Z",
+            "modified": "2023-04-30T13:11:20.388Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjg1MzMyMX0.KQFrGwoADOZFONj-qojhjKsH9LoSOyTU3PFYq7PyuzI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a6e3b647-1ed8-475f-a7f2-8a8c366a794a",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "c597c8b9-1409-4445-954f-f224b2378cfb",
+            "name": "Create a new Receptionist account",
+            "url": "http://localhost:5000/api/reception/registerreceptionist",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-04-30T14:50:19.760Z",
+            "modified": "2023-05-02T13:10:52.554Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNlcHRpb25pc3QiOnsiaWQiOiI2NDUxMGI2NmM4YTIxMWNlMTg1YmRjNzgifSwiaWF0IjoxNjgzMDMzMDQ0fQ.tOM6sWk-KCeKGxrLhT52NqhVakWyJvciFU6Mlesh7nM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"manishvv101@gmail.com\",\n  \"password\":\"manish123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fb81ff13-4cb7-4b9e-893e-73ad3b79ed96",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "c597c8b9-1409-4445-954f-f224b2378cfb",
+            "name": "Authenticate/Login a Receptionist ",
+            "url": "http://localhost:5000/api/reception/receptionistlogin",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-04-30T15:26:19.439Z",
+            "modified": "2023-05-02T13:05:43.198Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"manishvv102@gmail.com\",\n  \"password\":\"manish123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3b1b8b6a-2bf3-46e3-a3b8-7d2627a9b6bd",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "c597c8b9-1409-4445-954f-f224b2378cfb",
+            "name": "Get Receptionist Data",
+            "url": "http://localhost:5000/api/reception/getreceptionist",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-04-30T15:30:23.505Z",
+            "modified": "2023-04-30T15:31:32.323Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNlcHRpb25pc3QiOnsiaWQiOiI2NDRlODdlNWVkMGJhNzc2M2Y3ODg1Y2UifSwiaWF0IjoxNjgyODY4NDM2fQ.CpVHRCamskrGSGT8D33dlV4WUTAkJoKfIB3mTJ8kfNc"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3b51c2ce-e9d7-4841-8e5c-0e2df918f16a",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "b2d4cffb-85eb-416e-af2b-5ca450bce422",
+            "name": "Create a Prescription",
+            "url": "http://localhost:5000/api/prescription/newprescription/64509a460c0780e0672a9fea",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2023-04-30T15:58:18.389Z",
+            "modified": "2023-05-02T05:43:53.383Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3IiOnsiaWQiOiI2NDRlNGRmNmViY2VlNTI3NjIwNTYyMGYifSwiaWF0IjoxNjgyODUzMzY2fQ.oXnl5Ac2Y-Pe1exrqy8rIocN4u51W_iB47BGdXl9VGY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"disease\":\"cold 2\",\n  \"allergy\":\"none 2\",\n  \"doctorPrescription\":\"Take PCM 2\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "395e668a-4087-4894-867d-46b19a61c776",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "b2d4cffb-85eb-416e-af2b-5ca450bce422",
+            "name": "Fetch/Get all Patient Prescriptions ",
+            "url": "http://localhost:5000/api/prescription/fetchallprescriptions",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-04-30T17:08:37.972Z",
+            "modified": "2023-05-02T02:23:23.674Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjk5MzczNX0.Op1URszEEBY4bVMlTnkyLMJ6a3r0-ckUUhX94W3Yt8s"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4a41f1de-b0dc-4e07-960b-3f0fc81b50c9",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "b2d4cffb-85eb-416e-af2b-5ca450bce422",
+            "name": "Editing a presciption",
+            "url": "http://localhost:5000/api/prescription/editprescription/644e9f2a272239130add1f66",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2023-04-30T17:17:51.190Z",
+            "modified": "2023-04-30T17:27:38.524Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3IiOnsiaWQiOiI2NDRlNGRmNmViY2VlNTI3NjIwNTYyMGYifSwiaWF0IjoxNjgyODUzMzY2fQ.oXnl5Ac2Y-Pe1exrqy8rIocN4u51W_iB47BGdXl9VGY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"disease\":\"\",\n  \"allergy\":\"sore throat,cough\",\n  \"doctorPrescription\":\"Take PCM,Take Dcold\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7da2ff1d-9c49-4a20-bfc9-2215579df6da",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "b2d4cffb-85eb-416e-af2b-5ca450bce422",
+            "name": "Deleting a Prescription",
+            "url": "http://localhost:5000/api/prescription/deleteprescription/644e9f2a272239130add1f66",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2023-04-30T17:30:11.563Z",
+            "modified": "2023-04-30T17:30:40.168Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3IiOnsiaWQiOiI2NDRlNGRmNmViY2VlNTI3NjIwNTYyMGYifSwiaWF0IjoxNjgyODUzMzY2fQ.oXnl5Ac2Y-Pe1exrqy8rIocN4u51W_iB47BGdXl9VGY"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c68c4984-ba60-4a17-a603-2edc8ac24ca8",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "f4e20554-f402-49a6-a53b-bfa2ea575984",
+            "name": "Create a Emergency Case",
+            "url": "http://localhost:5000/api/emergency/admitpatient",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2023-04-30T18:15:47.636Z",
+            "modified": "2023-05-02T17:51:34.775Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fname\": \"Adhwaith\",\n  \"lname\": \"Shankar\",\n  \"gender\": \"male\",\n  \"email\": \"adhwaithshankar@gmail.com\",\n  \"password\":\"adhwaith123\",\n  \"mobileno\": \"9663664581\",\n  \"dob\":\"2002-03-03\",\n  \"address\":\"Pune\",\n  \"casualtyDescription\":\"Internal Bleeding\",\n  \"casualtyLevel\":\"medium\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d170c6d-e242-4321-bcf9-5141ea135efa",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "a8c1aaa4-38ca-4017-897b-94ade3266d5a",
+            "name": "Create a new Query / Contact",
+            "url": "http://localhost:5000/api/query/newquery",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2023-04-30T18:42:24.848Z",
+            "modified": "2023-04-30T18:49:44.842Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"patientID\":\"\",\n    \"fname\": \"Zabhi\",\n    \"lname\": \"Siddiqui\",\n    \"email\": \"zabhi@gmail.com\",\n    \"mobileno\": \"4565456656\",\n    \"address\":\"Kondhwa,Pune\",\n    \"query\":\"Is CT Scan available in ur hospital?\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "07dac677-70b6-4e60-947d-aaf0f3b60ca4",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "ac3246aa-0190-411d-bdb7-5efd60798f4e",
+            "name": "Get doctor Name by Specialization",
+            "url": "http://localhost:5000/api/auth/doctor/getdoctordetailsbyspecialization",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2023-05-01T11:39:15.941Z",
+            "modified": "2023-05-01T14:59:41.512Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjk0MTE3NX0.ohQXC-I2dNhKbkVi-1LmyTELLN7zZvdIRPz2XMNYnH0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"speciality\":\"ENT\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "185d59c6-2031-4b3f-919e-b5df25210956",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "ac3246aa-0190-411d-bdb7-5efd60798f4e",
+            "name": "Get Doctor Fees",
+            "url": "http://localhost:5000/api/auth/doctor/getdoctorfees",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2023-05-01T15:03:35.035Z",
+            "modified": "2023-05-01T15:10:05.635Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjk0MTE3NX0.ohQXC-I2dNhKbkVi-1LmyTELLN7zZvdIRPz2XMNYnH0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"docid\":\"644fa8c0717125a893611eee\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d5169d7b-036a-4ddc-8041-fba3efce79ac",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "b2d4cffb-85eb-416e-af2b-5ca450bce422",
+            "name": "Fetch Prescription By Id",
+            "url": "http://localhost:5000/api/prescription/fetchaprescriptionbyid",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2023-05-02T03:49:56.191Z",
+            "modified": "2023-05-02T03:50:41.162Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4Mjk5MzczNX0.Op1URszEEBY4bVMlTnkyLMJ6a3r0-ckUUhX94W3Yt8s"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\":\"644ea5ce089feccb1d7c8c1b\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4fb67a91-eb98-49ba-8010-d24e4e676417",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Fetch All Doctor Appointments",
+            "url": "http://localhost:5000/api/appointments/fetchalldocappointments",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2023-05-02T10:23:53.388Z",
+            "modified": "2023-05-02T10:26:01.548Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3IiOnsiaWQiOiI2NDRmYThjMDcxNzEyNWE4OTM2MTFlZWUifSwiaWF0IjoxNjgzMDIyMDIzfQ.cQ3BXm28cL-37zOVoIGh-8b4UZsmYZBNSVl2Fluymhc"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3d6ca3e0-eeb7-43d3-acc0-4f24341f82e3",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Cancel Appointment By Doctor",
+            "url": "http://localhost:5000/api/appointments/cancelAppointmentdoctor/6450e7908de9a5583f1b7b99",
+            "method": "PUT",
+            "sortNum": 220000,
+            "created": "2023-05-02T10:41:24.917Z",
+            "modified": "2023-05-02T10:44:24.736Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3IiOnsiaWQiOiI2NDRmYThjMDcxNzEyNWE4OTM2MTFlZWUifSwiaWF0IjoxNjgzMDIyMDIzfQ.cQ3BXm28cL-37zOVoIGh-8b4UZsmYZBNSVl2Fluymhc"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6457847d-cd22-4263-ab53-b6489817c96f",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "c597c8b9-1409-4445-954f-f224b2378cfb",
+            "name": "Get All Doctor Details",
+            "url": "http://localhost:5000/api/reception/getalldoctors",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2023-05-02T14:18:40.298Z",
+            "modified": "2023-05-02T14:20:00.671Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNlcHRpb25pc3QiOnsiaWQiOiI2NDUxMGI2NmM4YTIxMWNlMTg1YmRjNzgifSwiaWF0IjoxNjgzMDM3MTk0fQ.1zDTiljCRY2FlgxeTvPRgEg1eQid3iyqqL7msupT7Ns"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4518cfc3-d3c1-4a7f-845d-e84f0531418b",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "c597c8b9-1409-4445-954f-f224b2378cfb",
+            "name": "Get all Patient Details",
+            "url": "http://localhost:5000/api/reception/getallpatients",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2023-05-02T14:19:02.873Z",
+            "modified": "2023-05-02T14:20:03.846Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNlcHRpb25pc3QiOnsiaWQiOiI2NDUxMGI2NmM4YTIxMWNlMTg1YmRjNzgifSwiaWF0IjoxNjgzMDM3MTk0fQ.1zDTiljCRY2FlgxeTvPRgEg1eQid3iyqqL7msupT7Ns"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e4329072-a84f-4a3a-9835-ee543f4a159a",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "c597c8b9-1409-4445-954f-f224b2378cfb",
+            "name": "Get All Appointments",
+            "url": "http://localhost:5000/api/reception/getallappointments",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2023-05-02T14:22:11.821Z",
+            "modified": "2023-05-02T14:22:48.137Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWNlcHRpb25pc3QiOnsiaWQiOiI2NDUxMGI2NmM4YTIxMWNlMTg1YmRjNzgifSwiaWF0IjoxNjgzMDM3MTk0fQ.1zDTiljCRY2FlgxeTvPRgEg1eQid3iyqqL7msupT7Ns"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc0c380a-14b6-4070-9077-f434b9ac0d9a",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "f4e20554-f402-49a6-a53b-bfa2ea575984",
+            "name": "Fetch Emergency Cases For A Patient",
+            "url": "http://localhost:5000/api/emergency/fetchallpatientemergency",
+            "method": "GET",
+            "sortNum": 260000,
+            "created": "2023-05-02T18:17:39.207Z",
+            "modified": "2023-05-02T18:18:55.399Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ1MTUxMGMxNDljMmU0NTNkM2M2NzEyIn0sImlhdCI6MTY4MzA1MTEwOX0.D6-Eml3nDUruX1vpGjPNG4fJfK4j6xwriQ1r4q85awI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "28d425b9-f6e5-4fc0-b61e-2c904abd506c",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Get patient docs reports",
+            "url": "http://localhost:5001/api/auth/user/getuserdocumentbyemail",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2023-05-03T18:23:37.290Z",
+            "modified": "2023-05-15T11:22:40.676Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50Ijp7ImlkIjoiNjQ0ZTRkYzllYmNlZTUyNzYyMDU2MjBhIn0sImlhdCI6MTY4MzEzODI3Mn0._2_5_R70xh2bl5Lgg1yepwZ0wNr6stPvlQ3WxfT7ueY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"manishvh120@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ea05b5d9-a24a-45f5-b87f-3d0f2877198e",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "ac3246aa-0190-411d-bdb7-5efd60798f4e",
+            "name": "Get doc appointment by id",
+            "url": "",
+            "method": "POST",
+            "sortNum": 280000,
+            "created": "2023-05-03T19:14:04.700Z",
+            "modified": "2023-05-03T19:14:07.765Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8450541d-4182-43be-9a62-8b5e35091a70",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Get patient details by patientId from Appointments collection",
+            "url": "http://localhost:5000/api/auth/patient/getpatientbyid",
+            "method": "POST",
+            "sortNum": 290000,
+            "created": "2023-05-15T06:07:12.267Z",
+            "modified": "2023-05-15T06:14:57.057Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"patientId\":\"645c85065ab650791b83b9d0\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "02ae339a-36eb-4afc-b1fe-7a4e1ee39f66",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "15de1e03-a4d5-4d92-9640-e1757af4754d",
+            "name": "Get Doc Appointment by ID",
+            "url": "http://localhost:5000/api/appointments/fetchappointmentbyid/6450e7a98de9a5583f1b7b9d",
+            "method": "GET",
+            "sortNum": 300000,
+            "created": "2023-05-15T10:38:54.339Z",
+            "modified": "2023-05-15T10:39:40.742Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bcea46e8-4633-4b67-8174-670f388ffb3b",
+            "colId": "cb3ab224-16fb-43cc-bc55-f4afbad29bda",
+            "containerId": "6dc793df-e16a-410a-a4e2-56c88f21610e",
+            "name": "Get patient Data by Aadhar",
+            "url": "http://localhost:5000/api/auth/patient/getpatientbyaadhar",
+            "method": "POST",
+            "sortNum": 310000,
+            "created": "2023-05-22T09:08:40.891Z",
+            "modified": "2023-05-22T09:10:48.715Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"aadharNo\":\"1683486354393711\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

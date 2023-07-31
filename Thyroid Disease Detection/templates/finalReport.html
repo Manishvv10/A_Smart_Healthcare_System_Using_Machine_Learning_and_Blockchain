@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.3/purify.min.js"></script>
+
+    <!-- <script src="../static/js/script.js"></script> -->
+
+    <title>Patient Thyroid Test Report</title>
+  </head>
+  <body onload="getpatientdetailsbyaadhar()">
+    <div class="container-fluid my-3 justify-content-center align-items-center col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center mb-3">Global Hospitals,Pune</h1>
+                <h5 class="text-center mb-5">Disease Detection Report</h5>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Aadhar No:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="aadharNo">{singlePrescription.appointment}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text" >Dated:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="dated">{new Date(singlePrescription.appointmentDate).toDateString() + " " + new Date(singlePrescription.appointmentTime).toLocaleTimeString()}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Patient id:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="patientId">{singlePrescription.patient}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Patient's Name:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="patientName">{singlePrescription.patientfname + " " + singlePrescription.patientlname}</p>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Patient Contact No.:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="patientContact">{singlePrescription.mobileno}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Patient's Email:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="patientEmail">{singlePrescription.patientEmail}</p>
+                    </div>
+                </div>
+                <h5 class="card-text my-4">Blood Parameters:</h5>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">TSH:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="tsh">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">T3:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="t3">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">T4U:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="t4u">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">FTI:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="fti">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">On Thyroxine :</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="on_thyroxine">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Query On Thyroxine:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="query_on_thyroxine">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">On Antithyroid Medication :</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="on_anti_thyroid_medication">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Sick:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="sick">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Pregnant :</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="pregnant">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Thyroid Surgery:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="thyroid_surgery">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">I131 Treatment :</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="I131_treatment">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Query Hypothyroid:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="query_hypothyroid">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Query Hyperthyroid :</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="query_hyperthyroid">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Lithium:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="lithium">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Goitre :</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="goitre">{singlePrescription.doctor}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Tumor:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="tumor">{singlePrescription.doctorfname + " " + singlePrescription.doctorlname}</p>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Hypopituitary:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="hypopituitary">{singlePrescription.disease}</p>
+                    </div>
+                    <div class="col col-md-3">
+                        <h6 class="card-text">Psych:</h6>
+                    </div>
+                    <div class="col col-md-3">
+                        <p class="card-text" id="psych">{singlePrescription.allergy}</p>
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <div class="col">
+                        <h2 class="card-text">Result:</h2>
+                        <h5 class="card-text my-4" id="result">{singlePrescription.doctorPrescription}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center my-2">
+                <button class="btn btn-dark text-center" id="generatePdfButton" onclick="generatePDF()">Publish Report To Patient's Digilocker</button>
+        </div>
+        <div class="container text-center my-2" id="closeBtn">
+                <button class="btn btn-dark text-center" id="closeButton" onclick="window.close()">Close</button>
+        </div>
+    </div>  
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

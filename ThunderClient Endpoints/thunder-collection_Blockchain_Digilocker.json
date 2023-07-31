@@ -1,0 +1,194 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Blockchain_Digilocker",
+    "dateExported": "2023-06-03T18:47:23.445Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "8ef2064f-3bf5-4b0f-b49b-935f16ffed55",
+            "name": "User",
+            "containerId": "",
+            "created": "2023-05-03T10:51:20.008Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "ae4ab394-d05a-4e53-85a3-78c908333f8b",
+            "name": "Aadhar",
+            "containerId": "",
+            "created": "2023-05-07T18:58:22.749Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "4c0ad031-587e-49dc-be6c-859e035cf2c1",
+            "colId": "78b59f12-dd0d-44ee-b5df-438c20c0e79e",
+            "containerId": "8ef2064f-3bf5-4b0f-b49b-935f16ffed55",
+            "name": "Create/Register a User",
+            "url": "http://localhost:5001/api/auth/user/registeruser",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-03T10:51:31.236Z",
+            "modified": "2023-05-11T10:00:06.807Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"aadharNo\":\"1683486354393711\",\n  \"fname\":\"Manish\",\n  \"lname\":\"Verma\",\n  \"gender\":\"male\",\n  \"email\":\"manishvh120@gmail.com\",\n  \"password\":\"manish\",\n  \"mobileno\":\"1234567890\",\n  \"dob\":\"Sat Mar 10 2001 12:03:56 GMT+0530 (India Standard Time)\",\n  \"address\":\"pune\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "51d04497-b420-47f0-ba11-c63cbf73f4a7",
+            "colId": "78b59f12-dd0d-44ee-b5df-438c20c0e79e",
+            "containerId": "8ef2064f-3bf5-4b0f-b49b-935f16ffed55",
+            "name": "Login / Authenticate a User",
+            "url": "http://localhost:5001/api/auth/user/userlogin",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-03T10:51:46.346Z",
+            "modified": "2023-05-11T10:01:06.233Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"manishvh120@gmail.com\",\n  \"aadharNo\":\"1683486354393711\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "55385b28-8e9a-4517-96fa-23f6fda2ece7",
+            "colId": "78b59f12-dd0d-44ee-b5df-438c20c0e79e",
+            "containerId": "8ef2064f-3bf5-4b0f-b49b-935f16ffed55",
+            "name": "Get Logged-in User Data",
+            "url": "http://localhost:5001/api/auth/user/getuser",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-03T10:52:01.983Z",
+            "modified": "2023-05-11T10:00:28.189Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ1Y2JjYjRlZWRlOTRlZTQwZmMxNzA1In0sImlhdCI6MTY4Mzc5OTIyMH0.mf4qZPZapZ2Let5aBj2PzTN_N1xMQsnPg-Lw81eZYtg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d88fd396-6c43-45d4-b64d-36f386d3ef40",
+            "colId": "78b59f12-dd0d-44ee-b5df-438c20c0e79e",
+            "containerId": "8ef2064f-3bf5-4b0f-b49b-935f16ffed55",
+            "name": "Create Docs",
+            "url": "http://localhost:5001/api/auth/user/uploaddocs",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-05-03T13:52:22.868Z",
+            "modified": "2023-05-11T10:08:20.781Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ1Y2JkOTg2OGUxYWUzYmZmZDczOTkzIn0sImlhdCI6MTY4Mzc5OTY4MX0.9sjzRfX4ngv7RM4eYQdnbaImBeujXXWmXkdLJdLymbo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"docName\":\"Doc\",\n  \"docDescription\":\"doc\",\n  \"docCID\":\"doc\",\n  \"docRootCid\":\"doc\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6ba25010-549c-4673-8f41-2b314585d2f3",
+            "colId": "78b59f12-dd0d-44ee-b5df-438c20c0e79e",
+            "containerId": "8ef2064f-3bf5-4b0f-b49b-935f16ffed55",
+            "name": "Get user Docs",
+            "url": "http://localhost:5001/api/auth/user/getuserdocument",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-05-03T15:21:34.930Z",
+            "modified": "2023-05-11T10:08:36.204Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ1Y2JkOTg2OGUxYWUzYmZmZDczOTkzIn0sImlhdCI6MTY4Mzc5OTY4MX0.9sjzRfX4ngv7RM4eYQdnbaImBeujXXWmXkdLJdLymbo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5aa36cb7-9b80-4dd1-84e4-fee66608ab51",
+            "colId": "78b59f12-dd0d-44ee-b5df-438c20c0e79e",
+            "containerId": "ae4ab394-d05a-4e53-85a3-78c908333f8b",
+            "name": "Create A Aadhar",
+            "url": "http://localhost:5001/api/auth/aadhar/createaadhar",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-05-07T18:58:31.150Z",
+            "modified": "2023-05-14T17:30:10.885Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\": \"S.Adhwaith\",\n  \"lastName\": \"Shankar\",\n  \"gender\": \"male\",\n  \"email\": \"adhwaithshankar@gmail.com\",\n  \"mobileno\": \"9604594343\",\n  \"dob\":\"03/03/2001\",\n  \"address\": \"Pune,Maharashtra,India\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "92fb55dc-1536-486c-aeab-38db0f5b9195",
+            "colId": "78b59f12-dd0d-44ee-b5df-438c20c0e79e",
+            "containerId": "ae4ab394-d05a-4e53-85a3-78c908333f8b",
+            "name": "Aadhar Login / Authentication",
+            "url": "http://localhost:5001/api/auth/aadhar/aadharlogin",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-05-07T19:06:50.336Z",
+            "modified": "2023-05-07T19:07:43.373Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"aadharNo\":\"1683486354393711\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

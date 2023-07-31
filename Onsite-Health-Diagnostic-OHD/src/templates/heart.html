@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Diagnostic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="{{url_for('static', filename='img/disease2page.png')}}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+  <section id="top-section" class="top-section">
+    <div class="bg-colo">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{url_for('index')}}"><img
+                  src="{{url_for('static', filename='img/logo.png')}}" class="img-responsive"
+                  style="width:400px;height: 50px; margin-top: -18px;"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+                <li class=""><a href="{{url_for('disease')}}">Disease</a></li>
+                <li class=""><a href="{{url_for('breastcancer')}}">Breast</a></li>
+                <li class=""><a href="{{url_for('diabetes')}}">Diabetes</a></li>
+                <li class=""><a href="#">Malaria</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="top-section-info">
+            <div class="top-section-text text-center" style="margin-top:-70px" ;>
+              <form class="well form-horizontal" action="/heart" method="POST" id="contact_form">
+                <fieldset>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <b>
+                        <p style="color:rgb(126, 5, 31); font-size: 22px; margin-bottom: 23px;">Heart Failure Diagnostic
+                        </p>
+                      </b>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input name="age" placeholder="age" class="form-control" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <select name="sex" class="form-control">
+                          <option value="male">Female</option>
+                          <option value="female">Male</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <select name="chestpain" class="form-control">
+                          <option value="ATA">ATA</option>
+                          <option value="NAP">NAP</option>
+                          <option value="ASY">ASY</option>
+                          <option value="TA">TA</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input name="restingbp" placeholder="Resting BP" class="form-control" type="text">
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input name="cholestrol" placeholder="Cholestrol" class="form-control" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input name="fastingbs" placeholder="FastingBS" class="form-control" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <select name="restingecg" class="form-control">
+                          <option value="Normal">Normal</option>
+                          <option value="ST">ST</option>
+                          <option value="LVH">LVH</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input name="maxhr" placeholder="Max HR" class="form-control" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <select name="exercise" class="form-control">
+                          <option value="N">No</option>
+                          <option value="Y">Yes</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input name="oldpeak" placeholder="Old Peak" class="form-control" type="text">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <select name="stslope" class="form-control">
+                          <option value="up">Up</option>
+                          <option value="flat">Flat</option>
+                          <option value="down">Down</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Button -->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                      <button type="submit" class="btn btn-warning">Predict <span
+                          class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                  </div>
+
+
+                  <div class="res">
+
+                    <h3 style="color: rgba(6, 58, 82, 0.78);">{{predict}}</h3>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">Heart<br>Disease</h2>
+            <hr class="botm-line">
+            <p class="sec-para">Together CVD resulted in
+              17.9 million deaths (32.1%) in 2015, up from 12.3 million (25.8%) in 1990.
+              The term “heart disease” refers to several types of heart conditions. In the United
+              States, the most common type of heart disease is coronary artery disease (CAD),
+              which can lead to heart attack.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>Symptoms</h3>
+                <ul>
+                  <li>1. Fever</li>
+                  <li>2. hortness of breath</li>
+                  <li>3. Weakness or fatigue </li>
+                  <li>4. Dry or persistent cough</li>
+                  <li>5. Skin rashes or unusual spots</li>
+                  <li>6. Changes in your heart rhythm</li>
+                  <li>7. Swelling in your legs or abdomen</li>
+                </ul>
+              </div>
+            </div>
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>Prevention</h3>
+                <ul>
+                  <li>1. Eat a healthy diet</li>
+                  <li>2. Keep a healthy weight</li>
+                  <li>3. avoid smoking and drinking</li>
+                  <li>3. Maintain your blood sugar level</li>
+                  <li>4. Keeps your body physically active</li>
+                </ul>
+              </div>
+            </div>
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>Treatment</h3>
+
+                <ul>
+                  <li>1. CPR. Cardiopulmonary resuscitation </li>
+                  <li>2. Angioplasty and Stents </li>
+                  <li>3. Heart Bypass Surgery</li>
+                  <li>4. Valve Disease Treatment</li>
+                  <li>5. Cardioversion</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/custom.js')}}"></script>
+</body>
+
+</html>

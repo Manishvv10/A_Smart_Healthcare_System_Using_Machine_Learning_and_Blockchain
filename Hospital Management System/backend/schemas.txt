@@ -1,0 +1,69 @@
+I.Patient:
+1.first name    done
+2.last name     done
+3.gender        done
+4.email         done
+5.mobile no.    done
+6.password      done
+7.dob           done
+8. age          done
+9. address      done
+10. documents   done
+11. username    done
+12. password    done
+13. Patient unique health id    done
+
+II.Doctors:
+1.username      done
+2.password      done
+3.email         done
+4.speciality    done
+5.mobile no.    done
+6.fees          done
+7.Qualification done
+8.experience    done
+9 dob           done  
+10.gender       done
+11. unique id   done
+
+III.Appointments:
+1. Patient id       done
+2 fname             done         
+3. lname            done
+4. gender           done
+5. email            done
+6. contact          done
+7. doctor           done
+8. doctor fees      done
+9. Appointment date  done   
+10. Appointment time  done
+11. Patient Status (Active(1) or Cancelled(0)?)  done
+11. Doctor Status (Active(1) or Cancelled(0)?)   done
+
+IV.Admin:
+1. fname 
+2. lname 
+3. username     done
+4. password     done
+
+V.Contact Us section:
+1. name
+2. email
+3. mobile no.
+4. query
+
+VI.prescriptions
+1. doctor
+2. patient id
+3. fname
+4. lname
+5. Appointment date
+6. Appointment time
+7. disease
+8. allery
+9. prescription
+
+VII. Emergency Cases
+1. Patient id           done
+2. casualtyDescription  done
+3. casualtyLevel        done

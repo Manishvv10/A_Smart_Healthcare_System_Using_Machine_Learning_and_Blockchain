@@ -1,0 +1,13 @@
+numpy
+opencv_python
+scikit_learn
+flask
+Werkzeug
+gevent
+joblib
+pillow
+h5py
+tensorflow-cpu
+gunicorn
+keras
+pytest

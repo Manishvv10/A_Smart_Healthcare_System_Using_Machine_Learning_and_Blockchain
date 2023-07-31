@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pneumonia Diagnostic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="{{url_for('static', filename='img/disease2page.png')}}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+</head>
+
+<body>
+  <section id="top-section" class="top-section">
+    <div class="bg-colo">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{url_for('index')}}"><img
+                  src="{{url_for('static', filename='img/logo.png')}}" class="img-responsive"
+                  style="width:400px;height: 50px; margin-top: -18px;"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+                <li class=""><a href="{{url_for('disease')}}">Disease</a></li>
+                <li class=""><a href="{{url_for('breastcancer')}}">Breast</a></li>
+                <li class=""><a href="{{url_for('diabetes')}}">Diabetes</a></li>
+                <li class=""><a href="#">Malaria</a></li>
+
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="top-section-info">
+           
+             
+                <fieldset>
+                  
+
+                    <form action="/pneumonia" method="POST" enctype="multipart/form-data">
+                      <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <b>
+                        <p style="color:rgb(126, 5, 31); font-size: 22px;">Pneumonia Diagnostic
+                        </p>
+                      </b>
+                    </div>
+                  </div>
+                      <div class="contain">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="control-label"></label>
+                              <div class="preview-zone hidden">
+                                <div class="box box-solid">
+                                  <div class="box-header with-border">
+                                    <div><b>Preview</b></div>
+                                    <div class="box-tools pull-right">
+                                      <button type="button" class="btn btn-danger btn-xs remove-preview">
+                                        <i class="fa fa-times"></i> Reset
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div class="box-body"></div>
+                                </div>
+                              </div>
+                              <div class="dropzone-wrapper">
+                                <div class="dropzone-desc">
+                                  <i class="glyphicon glyphicon-download-alt"></i>
+                                  <p>Choose X-ray image file or drag it here.</p>
+                                </div>
+                                <input type="file" name="file" class="dropzone">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="col-md-4">
+                          <button type="submit" class="btn-custom">Predict <span
+                              class="glyphicon glyphicon-send"></span></button>
+                        </div>
+
+                        <h3 style="color: rgba(6, 58, 82, 0.78); margin-top: 10px;">{{prediction}}</h3>
+                      </div>
+                      
+                      
+                      
+                </div>
+                    </form>
+                 
+                  
+                 
+                </fieldset>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  </section>
+
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">Pneumonia <br>Diagnostic</h2>
+            <hr class="botm-line">
+            <p class="sec-para">Pneumonia is an infection that inflames the air sacs in one or both lungs. The air
+              sacs may fill with fluid or pus (purulent material), causing cough with phlegm or
+              pus, fever, chills, and difficulty breathing. A variety of organisms, including
+              bacteria, viruses and fungi, can cause pneumonia.</p>
+
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>Symptoms</h3>
+                <ul>
+
+                  <li>1. Cough</li>
+                  <li>2. Fever</li>
+                  <li>3. Fatigue</li>
+                  <li> 4. Sputum</li>
+                  <li> 5. chest pain</li>
+                  <li>6. Shortness of breath</li>
+                </ul>
+
+
+              </div>
+            </div>
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>Prevention</h3>
+                <ul>
+                  <li> 1. Vaccination</li>
+                  <li>2. Environmental measure</li>
+                  <li>3. Appropriate treatment</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>Treatment</h3>
+                <ul>
+                  <li>1. Medication</li>
+                  <li>2. OTC Medication</li>
+                  <li>3. Oxygen therapy</li>
+                  <li>4. Respiratory therapy</li>
+
+                  <li>5. Antibiotics injected into vein</li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/custom.js')}}"></script>
+</body>
+
+</html>
